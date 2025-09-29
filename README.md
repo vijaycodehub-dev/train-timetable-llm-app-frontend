@@ -1,70 +1,75 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<div align="center">
+	<h1>Mumbai Local Train Inquiry (Frontend)</h1>
+	<p><b>A modern React app to ask questions about Mumbai local train timings, powered by an LLM backend.</b></p>
+</div>
 
-In the project directory, you can run:
+>A modern React app for asking questions about Mumbai local train timings, with a clean UI and easy integration to an LLM-powered backend.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Ask natural language questions about Mumbai local train timings
+- Clean, responsive UI with header and footer
+- Instant answers powered by a backend API (LLM or custom logic)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Demo
 
-### `npm test`
+![App Screenshot](public/logo192.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Prerequisites
+- Node.js (v16 or above recommended)
+- npm (comes with Node.js)
+- Backend API running at `http://localhost:8000/ask-train-time` (see below)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clone the repository and install dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/vijaycodehub-dev/train-timetable-llm-app-frontend.git
+cd train-timetable-llm-app-frontend
+npm install
+```
 
-### `npm run eject`
+### Running the App
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm start
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Build for Production
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm run build
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Usage
 
-## Learn More
+1. Enter your question about Mumbai local train timings in the input box (e.g., "When is the next train from Dadar to Thane?").
+2. Click **Ask**. The app will query the backend and display the answer.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Backend API
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This frontend expects a backend API endpoint at `POST http://localhost:8000/ask-train-time` that accepts:
 
-### Code Splitting
+```json
+{ "question": "<your question>" }
+```
+and returns:
+```json
+{ "answer": "<answer string>" }
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+You can use any backend (Python FastAPI, Flask, Node.js, etc.) that implements this contract. For LLM integration, connect your backend to an LLM or database as needed.
 
-### Analyzing the Bundle Size
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- `src/TrainTimeApp.jsx` — Main React component
+- `public/` — Static assets and HTML
+- `package.json` — Project dependencies and scripts
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
